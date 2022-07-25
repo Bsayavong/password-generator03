@@ -1,11 +1,12 @@
 //Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//variables I have made
+//The variables created, 26 letters both in "lowerCase" & "upperCase" along with 
 const lowerCase = ["a", "b" ,"c" ,"d" ,"e" ,"f" ,"g" ,"h" ,"i" ,"j" ,"k" ,"l" ,"m" ,"n" ,"o" ,"p" ,"q" ,"r" ,"s" ,"t" ,"u" ,"v" ,"w" ,"x" ,"y" ,"z"];
 const upperCase = ["A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"H" ,"I" ,"J" ,"K" ,"L" ,"M" ,"N" ,"O" ,"P" ,"Q" ,"R" ,"S" ,"T" ,"U" ,"V" ,"W" ,"X" ,"Y" ,"Z"];
 const numbers = [0,1,2,3,4,5,6,7,8,9];
-const specialCharacters = ["'","!","@","#","$","%","^","&","*","(",")","_","+","~","`","|","}","{","[","]","\"",":",";","?",">","<",",",".","/","-","="];
+const specialCharacters = ["'","!","@","#","$","%","^","&","*","(",")","_","+","~","`","|","}","{","[","]","\",",":",";","?",">","<",",",".","/","-","="];
+
 let userChoice = [];
 let generatedPassword = "";
 
@@ -17,10 +18,11 @@ function writePassword() {
   passwordText.value = password;
 }
 
+//My series of 5 prompts
 function generatePassword() {
   function userInput() {
     let userPassLength = window.prompt(
-      "Please indicate desired password length: 8-128");
+      "Please select your password length between 8-128 characters");
       if (userPassLength<8 || userPassLength>128) {
         alert("Value must be between 8-128");
         return userInput();  
@@ -28,16 +30,20 @@ function generatePassword() {
       console.log(userPassLength);
       return [userPassLength];
   }
+
+  //My series of 4 prompts
   function userConfirms() {
-      let userLower = confirm("Do you want lowercase letters in your password?");
+      let userLower = confirm("Would you like to use lowercase letters in your password?");
       console.log(userLower);
-      let userUpper = confirm("Do you want uppercase letters in your password?");
+      let userUpper = confirm("Would you like to use uppercase letters in your password?");
       console.log(userUpper); 
-      let userNumber = confirm("Do you want numbers in your password?");
+      let userNumber = confirm("Would you like to use numbers in your password?");
       console.log(userNumber);
-      let userSpecial = confirm("Do you want special characters in your password?");
+      let userSpecial = confirm("A special character is not required but recommended, but for extra security would you like to use special characters?");
       console.log(userSpecial);
 
+
+      //If any of the console logs are "false" another prompt is created for the needed criteria
     if (!userLower && !userUpper && !userNumber && !userSpecial) {
       alert("At least one must be selected");
       return userConfirms();
