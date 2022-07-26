@@ -11,7 +11,7 @@ const specialCharacters = ["'","!","@","#","$","%","^","&","*","(",")","_","+","
 let userChoice = [];
 let generatedPassword = "";
 
-// Writes password to the "id" class
+// Writes password to the selected "id" class.
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
@@ -54,7 +54,7 @@ function generatePassword() {
   userPassLength = userPassLengthHolder[0];
   console.log(userPassLength);
 
-  //Defining each boolean value
+  //Defining each of the 4 boolean values
   let userBoolean = userConfirms();
   console.log(userBoolean);
   userLower = userBoolean[0];
