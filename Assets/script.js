@@ -1,4 +1,4 @@
-//Assignment Code
+//Begin with creating an assignment code, I chose "generate".
 var generateBtn = document.querySelector("#generate");
 
 //4 variables that are determined with a string of 26 letters in "lowerCase" & "upperCase" and numbers with special characters.
@@ -11,7 +11,6 @@ const specialCharacters = ["'","!","@","#","$","%","^","&","*","(",")","_","+","
 let userChoice = [];
 let generatedPassword = "";
 
-  
 // Writes password to the "id" class
 function writePassword() {
   let password = generatePassword();
@@ -40,12 +39,12 @@ function generatePassword() {
       console.log(userUpper); 
       let userNumber = confirm("Would you like to use numbers in your password?");
       console.log(userNumber);
-      let userSpecial = confirm("A special character is not required but recommended, but for extra security would you like to use special characters?");
+      let userSpecial = confirm("A special character is not required but recommended, for added security would you like to use special characters?");
       console.log(userSpecial);
 
     //If any of the console logs are "false" another prompt is activated by using "if" & "return" statement to confirm user has met the ideal requirements.
     if (!userLower && !userUpper && !userNumber && !userSpecial) {
-      alert("At least one must be selected");
+      alert("At least one Lowercase, Uppercase, Number, Special Character must be selected");
       return userConfirms();
     }
   
@@ -90,7 +89,6 @@ for (let i = 0; i < userPassLength; i++) {
 }
 return generatedPassword;
 }
-
 
 // Add event listener which reacts to the "click" event which tells JavaScript to write password to the webpage.
 generateBtn.addEventListener("click", writePassword);
