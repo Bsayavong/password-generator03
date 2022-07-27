@@ -62,7 +62,7 @@ function generatePassword() {
   userNumber = userBoolean[2];
   userSpecial = userBoolean[3];
 
-  //Usage of "if" statements for userChoice arrays & concatencation to combine my strings for the 4 "const" variables.
+  //Usage of "if" statements for userChoice arrays & concatenation to combine my strings for the 4 "const" variables.
   if (userLower) {
     userChoice = userChoice.concat(lowerCase);
     console.log(userChoice);
