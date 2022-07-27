@@ -1,4 +1,4 @@
-//Begin with creating an assignment code, I chose "generate".
+//Begin the assignment code by identifying the element (btn) & specifying "generate" as the id selector. 
 var generateBtn = document.querySelector("#generate");
 
 //4 variables that are determined with a string of 26 letters in "lowerCase" & "upperCase" and numbers with special characters.
@@ -7,11 +7,11 @@ const upperCase = ["A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"H" ,"I" ,"J" ,"K" ,"L" ,"
 const numbers = ["0,1,2,3,4,5,6,7,8,9"];
 const specialCharacters = ["'","!","@","#","$","%","^","&","*","(",")","_","+","~","`","|","}","{","[","]",":",";","?",">","<",",",".","/","-","="];
 
-//Declaring the variables that are limited to my block statements.
+//Declaring the variables that are assigned to my block statements & strings.
 let userChoice = [];
 let generatedPassword = "";
 
-// Writes password to the selected "id" class.
+//By using function it produces a password to the selected "id" class.
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
@@ -42,9 +42,9 @@ function generatePassword() {
       let userSpecial = confirm("A special character is not required but recommended, for added security would you like to use special characters?");
       console.log(userSpecial);
 
-    //If any of the console logs are "false" another prompt is activated by using "if" & "return" statement to confirm user has met the ideal requirements.
+    //If all of the console logs are "false" another prompt is activated by using "if" & "return" statement to notify user has not met at least 1 requirement.
     if (!userLower && !userUpper && !userNumber && !userSpecial) {
-      alert("At least one Lowercase, Uppercase, Number, Special Character must be selected");
+      alert("At least one Lowercase, Uppercase, Number, Special Character must be selected.");
       return userConfirms();
     }
   
@@ -62,7 +62,7 @@ function generatePassword() {
   userNumber = userBoolean[2];
   userSpecial = userBoolean[3];
 
-  //Usage of "if" statements for userChoice arrays & concatenation to combine my strings for the 4 "const" variables.
+  //Usage of "if" statements for userChoice arrays & concatenation to combine my strings for my 4 variables.
   if (userLower) {
     userChoice = userChoice.concat(lowerCase);
     console.log(userChoice);
@@ -80,7 +80,7 @@ function generatePassword() {
     console.log(userChoice);
   }
 
-//Created a for loop for my password to randomly populate within the chosen character count (<8 & >128).
+//Created a for loop for my random password to populate within the chosen character count (<8 & >128).
 for (let i = 0; i < userPassLength; i++) {
   let randomIndex = Math.floor(Math.random()*userChoice.length);
   let randomCharacter = userChoice[randomIndex];
